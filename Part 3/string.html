@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Manipulation</title>
+</head>
+<body>
+    <h1>Check the console for output</h1>
+    <script>
+        // Step 1: Define strings
+        let myString = "This is a string";
+        let anotherString = "   Another string"; // 3 spaces at start
+        let hello = "Hello there!";
+        let myName = "Ethan"; // replace with your first name
+
+        console.log("Step 1 - Strings defined:");
+        console.log({ myString, anotherString, hello, myName });
+
+        // Step 2: Length and characters
+        console.log("\nStep 2 - Length and characters:");
+        console.log("Length of myString:", myString.length);
+        console.log("First character of myString:", myString.charAt(0));
+        console.log("11th character of myString:", myString.charAt(10));
+
+        // Step 3: Slice and substring
+        let sliced = myString.slice(5, 9); // "is a"
+        let substr = anotherString.substring(4, 7); // "the" (skip first 3 spaces)
+
+        console.log("\nStep 3 - Slice and substring:");
+        console.log("Sliced from myString:", sliced);
+        console.log("Substring from anotherString:", substr);
+
+        // Step 4: Change case
+        console.log("\nStep 4 - Case conversion:");
+        console.log("myName in upper case:", myName.toUpperCase());
+        console.log("myName in lower case:", myName.toLowerCase());
+
+        // Step 5: String manipulations
+        let concatenated = hello.concat(" ", myName);
+        let trimmed = anotherString.trim();
+        let replaced = myString.replace("is a", "");
+        let splitString = myString.split(" ");
+
+        console.log("\nStep 5 - Manipulations:");
+        console.log("Concatenated string:", concatenated);
+        console.log("Trimmed anotherString:", trimmed);
+        console.log("Replaced in myString:", replaced);
+        console.log("Split myString:", splitString);
+
+        // Step 6-8: File operations are not possible in browser
+        console.log("\nStep 6-8 - File operations skipped (cannot access filesystem in browser).");
+
+        // Step 6 & 7: Write string to file
+const fs = require('fs');
+
+let dataToWrite = "This is the data to save in output.txt";
+
+fs.writeFile("output.txt", dataToWrite, (err) => {
+    if (err) {
+        console.error("Error writing file:", err);
+    } else {
+        console.log("\nStep 6 & 7 - File written successfully!");
+    }
+});
+
+// Step 8: Read string from file
+fs.readFile("output.txt", "utf8", (err, data) => {
+    if (err) {
+        console.error("Error reading file:", err);
+    } else {
+        console.log("\nStep 8 - File read successfully:");
+        console.log(data);
+    }
+});
+    </script>
+</body>
+</html>
