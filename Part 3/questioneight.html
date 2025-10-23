@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3 - String Manipulation</title>
+</head>
+<body>
+    <h1>Check the console for output</h1>
+    <script>
+        // =====================
+        // Q3.1 - Define strings
+        // =====================
+        let myString = "This is a string";
+        let anotherString = "   Another string"; // 3 spaces at start
+        let hello = "Hello there!";
+        let myName = "Ethan"; // replace with your first name
+
+        console.log("Q3.1 - Strings defined:", { myString, anotherString, hello, myName });
+
+        // =====================
+        // Q3.2 - Length and characters
+        // =====================
+        console.log("\nQ3.2 - Length and characters:");
+        console.log("Length of myString:", myString.length);
+        console.log("First character of myString:", myString.charAt(0));
+        console.log("11th character of myString:", myString.charAt(10));
+
+        // =====================
+        // Q3.3 - Slice and substring
+        // =====================
+        let sliced = myString.slice(5, 9); // "is a"
+        let substr = anotherString.substring(4, 7); // "the" (skip first 3 spaces)
+        console.log("\nQ3.3 - Slice and substring:");
+        console.log("Sliced 'is a' from myString:", sliced);
+        console.log("Substring 'the' from anotherString:", substr);
+
+        // =====================
+        // Q3.4 - Change case
+        // =====================
+        console.log("\nQ3.4 - Change case:");
+        console.log("myName in upper case:", myName.toUpperCase());
+        console.log("myName in lower case:", myName.toLowerCase());
+
+        // =====================
+        // Q3.5 - String manipulations
+        // =====================
+        let concatenated = hello.concat(" ", myName);
+        let trimmed = anotherString.trim();
+        let replaced = myString.replace("is a", "");
+        let splitString = myString.split(" ");
+
+        console.log("\nQ3.5 - String manipulations:");
+        console.log("Concatenated string:", concatenated);
+        console.log("Trimmed anotherString:", trimmed);
+        console.log("Replaced 'is a' in myString:", replaced);
+        console.log("Split myString:", splitString);
+
+        // =====================
+        // Q3.6 & Q3.7 - Save text file
+        // =====================
+        function saveTextFile(filename, text) {
+            const blob = new Blob([text], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.download = filename;
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+            console.log(`Q3.6/Q3.7 - File '${filename}' created and downloaded.`);
+        }
+
+        let dataToSave = "This is the content of output.txt";
+        saveTextFile("output.txt", dataToSave);
+
+        // =====================
+        // Q3.8 - Read text file
+        // =====================
+        function readTextFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                console.log("Q3.8 - Contents of the file:");
+                console.log(text);
+            };
+            reader.readAsText(file);
+        }
+
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = ".txt";
+        input.addEventListener("change", readTextFile);
+        document.body.appendChild(input);
+
+        console.log("\nQ3.8 - Use the file input above to select output.txt and see its contents in the console.");
+    </script>
+</body>
+</html>
