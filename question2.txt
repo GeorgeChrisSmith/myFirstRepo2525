@@ -1,0 +1,4 @@
+// Step 2: Add new properties 'rating' and 'Summary' to the object
+myMovie.rating = 5;
+myMovie.Summary = "World War II movie about the Normandy landings";
+console.log("Step 2 – Added properties:", myMovie);
