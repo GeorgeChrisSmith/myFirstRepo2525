@@ -1,0 +1,6 @@
+// Step 1: Create a movie object with initial properties Title and Year
+let myMovie = {
+    Title: "The longest day",
+    Year: 1964
+};
+console.log("Step 1 – Initial object:", myMovie);
