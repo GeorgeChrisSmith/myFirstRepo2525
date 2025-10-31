@@ -1,0 +1,4 @@
+// Step 3: Update the 'rating' property and confirm 'Year' is correct
+myMovie.rating = 4; // Update rating from 5 to 4
+myMovie.Year = 1962; // Confirm the year (no change in this case)
+console.log("Step 3 – Updated properties:", myMovie);
