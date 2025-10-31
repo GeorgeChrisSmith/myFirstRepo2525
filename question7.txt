@@ -1,0 +1,5 @@
+Test Case    Function          Input Array                              Target    Expected Result    Actual Result    Pass/Fail    Notes
+1            sequentialSearch  [3,5,11,14,16,19,20,23,25,30,45]         19        5                  -                -           Target found
+2            sequentialSearch  [3,5,11,14,16,19,20,23,25,30,45]         8         -1                 -                -           Target not found
+3            binarySearch      [3,5,11,14,16,19,20,23,25,30,45]         23        7                  -                -           Target found
+4            binarySearch      [3,5,11,14,16,19,20,23,25,30,45]         31        -1         
