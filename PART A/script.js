@@ -44,12 +44,11 @@ console.log("Step 3 - After insertion:", numberArray);
  * @param {number} value - The number to insert
  */
 function insertSorted(arr, value) {
-  // Find correct position to insert
   let index = 0;
   while (index < arr.length && arr[index] < value) {
     index++;
   }
-  arr.splice(index, 0, value); // Insert value at position
+  arr.splice(index, 0, value); // <-- Best line for breakpoint
 }
 
 /* ------------------------------
@@ -85,6 +84,7 @@ function removeValue(arr, value) {
  * @returns {number} - Index of the value if found, -1 otherwise
  */
 function sequentialSearch(arr, target) {
+  debugger; // <- code will pause here
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) {
       return i;
@@ -124,25 +124,4 @@ function binarySearch(arr, target) {
 }
 
 // Example test for binarySearch
-console.log("Binary search for 31:", binarySearch(numberArray, 31)); // Should return -1
-
-<<<<<<< Updated upstream
-sequentialSearch(numberArray, 19);
-
-function sequentialSearch(arr, target) {
-  debugger; // <- code will pause here
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
-  }
-  return -1;
-=======
-function insertSorted(arr, value) {
-  let index = 0;
-  while (index < arr.length && arr[index] < value) {
-    index++;
-  }
-  arr.splice(index, 0, value); // <-- Best line for breakpoint
->>>>>>> Stashed changes
-}
+console.log("Binary search for 19:", binarySearch(numberArray, 19));
