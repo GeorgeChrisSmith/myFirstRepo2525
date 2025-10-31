@@ -1,7 +1,7 @@
 // Step 1: Create a movie object with initial properties Title and Year
 let myMovie = {
     Title: "The longest day",
-    Year: 1964
+    Year: 1962
 };
 console.log("Step 1 – Initial object:", myMovie);
 
@@ -12,7 +12,7 @@ console.log("Step 2 – Added properties:", myMovie);
 
 // Step 3: Update the 'rating' property and confirm 'Year' is correct
 myMovie.rating = 4; // Update rating from 5 to 4
-myMovie.Year = 1964; // Confirm the year (no change in this case)
+myMovie.Year = 1962; // Confirm the year (no change in this case)
 console.log("Step 3 – Updated properties:", myMovie);
 
 // Step 4: Remove the 'Summary' property from the object
